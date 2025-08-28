@@ -298,17 +298,14 @@ function openProjectModal(projectType, cardElement) {
     // 处理视频显示 - 支持Vimeo和本地视频
     const modalVideoContainer = document.getElementById('modalVideoContainer');
     if (project.vimeoId) {
-        // 显示Vimeo视频
+        // 显示Vimeo视频 - 使用简化的iframe，让CSS控制样式
         modalVideoContainer.innerHTML = `
-            <div style="padding:56.25% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/${project.vimeoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="${project.title}">
-                </iframe>
-            </div>
+            <iframe src="https://player.vimeo.com/video/${project.vimeoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    title="${project.title}">
+            </iframe>
         `;
     } else if (project.video) {
         // 显示本地视频
