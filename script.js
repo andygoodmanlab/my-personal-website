@@ -300,7 +300,7 @@ function openProjectModal(projectType, cardElement) {
     if (project.vimeoId) {
         // 显示Vimeo视频 - 使用简化的iframe，让CSS控制样式
         modalVideoContainer.innerHTML = `
-            <iframe src="https://player.vimeo.com/video/${project.vimeoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+            <iframe src="https://player.vimeo.com/video/${project.vimeoId}?badge=0&amp;autopause=0&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;player_id=0&amp;app_id=58479" 
                     frameborder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                     referrerpolicy="strict-origin-when-cross-origin" 

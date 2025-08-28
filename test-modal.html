@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal CSS Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 测试用的内联样式 */
+        .test-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #18181B;
+            border-radius: 16px;
+            padding: 20px;
+            z-index: 1000;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: auto;
+        }
+        
+        .test-content {
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        
+        .test-button {
+            background: #00A3FF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="test-button" onclick="showTestModal()">Show Test Modal</button>
+    
+    <div id="testModal" class="test-modal" style="display: none;">
+        <div class="modal-hero">
+            <div class="modal-video-container">
+                <div style="background: #333; color: white; padding: 20px; text-align: center;">
+                    <h3>Test Video Container</h3>
+                    <p>This should be 500-600px height on desktop</p>
+                    <p>Check browser dev tools for actual CSS values</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-header">
+            <h2>Test Modal</h2>
+        </div>
+        
+        <div class="modal-story">
+            <p>This is a test modal to verify CSS is working.</p>
+            <p>Check the modal-hero and modal-video-container heights in dev tools.</p>
+        </div>
+        
+        <button class="test-button" onclick="hideTestModal()">Close</button>
+    </div>
+
+    <script>
+        function showTestModal() {
+            document.getElementById('testModal').style.display = 'block';
+        }
+        
+        function hideTestModal() {
+            document.getElementById('testModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
