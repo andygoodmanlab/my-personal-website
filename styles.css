@@ -988,7 +988,8 @@ button {
   }
   
   .modal-hero {
-    height: 200px;
+    min-height: 350px;
+    max-height: 450px;
   }
   
   .modal-title {
@@ -1464,7 +1465,8 @@ button {
   }
   
   .modal-hero {
-    height: 250px;
+    min-height: 400px;
+    max-height: 500px;
   }
 }
 
