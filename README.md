@@ -97,6 +97,22 @@ A modern, interactive personal portfolio website showcasing professional experie
 2. Ensure `index.html` is in the root directory
 3. Configure your domain to point to the hosting
 
+## 📚 Development Guidelines
+
+Before starting any development work, please read our comprehensive development guidelines:
+
+**[📖 DEVELOPMENT_GUIDELINES.md](./DEVELOPMENT_GUIDELINES.md)**
+
+This document contains:
+- Standard problem-solving workflows
+- Technical solution selection principles
+- Validation mechanisms and checklists
+- Common problem solutions library
+- Code quality standards
+- Error handling strategies
+
+**⚠️ Important**: Following these guidelines helps avoid common pitfalls and ensures high-quality solutions.
+
 ## 🔧 Customization
 
 ### Content Updates
