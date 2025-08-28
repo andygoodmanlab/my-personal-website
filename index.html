@@ -198,12 +198,16 @@
                     <!-- Project 1: AutoCut -->
                     <article class="project-card" data-project="autocut">
                         <div class="project-media">
-                            <video class="project-video" autoplay loop muted playsinline>
-                                <source src="assets/projects/autocut-demo.mp4" type="video/mp4">
-                                <img src="assets/projects/autocut-demo.webp" alt="AutoCut Project" class="project-fallback" loading="lazy">
-                            </video>
+                            <div class="project-video-container" style="padding:56.25% 0 0 0;position:relative;">
+                                <iframe src="https://player.vimeo.com/video/1113875050?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                                        frameborder="0" 
+                                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" 
+                                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                                        title="AutoCut Project Demo">
+                                </iframe>
+                            </div>
                             <div class="project-overlay">
-                                <div class="play-button">▶</div>
                                 <div class="view-details">View Details</div>
                             </div>
                         </div>
@@ -288,9 +292,9 @@
                 <div class="modal-content">
                     <!-- Project Hero Media -->
                     <div class="modal-hero">
-                        <video class="modal-video" id="modalVideo" controls>
-                            <source src="" type="video/mp4">
-                        </video>
+                        <div class="modal-video-container" id="modalVideoContainer">
+                            <!-- Video will be dynamically inserted here -->
+                        </div>
                     </div>
 
                     <!-- Project Title & Tags -->

@@ -226,7 +226,7 @@ function initializeProjectCards() {
 const projectData = {
     autocut: {
         title: 'AutoCut (0→1)',
-        video: 'assets/projects/autocut-demo.mp4',
+        vimeoId: '1113875050',
         tags: ['AI/ML', 'Video Creation', 'Product Strategy'],
         challenge: 'Users need professional-grade video editing tools, but traditional tools have high learning costs and complex operations, limiting the creative ability of ordinary users.',
         role: 'As the lead product manager, I was responsible for product strategy formulation from 0 to 1, user research, feature design, and cross-team collaboration, ensuring the product was successfully launched and achieved growth targets.',
@@ -294,7 +294,30 @@ function openProjectModal(projectType, cardElement) {
     
     // 填充Modal内容
     document.getElementById('modalTitle').textContent = project.title;
-    document.getElementById('modalVideo').src = project.video;
+    
+    // 处理视频显示 - 支持Vimeo和本地视频
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    if (project.vimeoId) {
+        // 显示Vimeo视频
+        modalVideoContainer.innerHTML = `
+            <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe src="https://player.vimeo.com/video/${project.vimeoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                        title="${project.title}">
+                </iframe>
+            </div>
+        `;
+    } else if (project.video) {
+        // 显示本地视频
+        modalVideoContainer.innerHTML = `
+            <video class="modal-video" controls>
+                <source src="${project.video}" type="video/mp4">
+            </video>
+        `;
+    }
     
     // 填充标签
     const modalTags = document.getElementById('modalTags');
@@ -371,11 +394,10 @@ function closeProjectModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
     
-    // 重置视频
-    const video = document.getElementById('modalVideo');
-    if (video) {
-        video.pause();
-        video.currentTime = 0;
+    // 重置视频容器
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    if (modalVideoContainer) {
+        modalVideoContainer.innerHTML = '';
     }
 }
 
