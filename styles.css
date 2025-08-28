@@ -1506,21 +1506,33 @@ button {
 
 /* Force refresh: 2025年 8月28日 星期四 20时10分09秒 CST */
 
-/* ==========================================================================
-   修复项目弹窗中视频尺寸过小的问题
-   ========================================================================== */
+/* --- 最終版：修復專案彈窗中影片尺寸過小的問題 V2 --- */
 
-/* 影片的外層容器，讓它佔據可用寬度 */
+/* 1. 為影片播放器創建一個有意義的佈局容器 */
 .modal-video-container {
     width: 100%;
-    max-width: 800px; /* 您可以調整這個最大寬度來控制影片的最大尺寸 */
-    margin: 0 auto;   /* 讓影片水平居中 */
+    max-width: 960px; /* 您可以調整這個最大寬度 */
+    margin: 24px auto; /* 上下邊距和水平居中 */
+    
+    /* 確保容器本身至少有一定高度 */
+    min-height: 540px; 
+    
+    /* 使用 Flexbox 讓內部播放器居中對齊 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 針對 Vimeo 播放器本身，強制覆蓋其錯誤的內聯樣式 */
-.modal-video-container .player {
+/* 2. 直接針對 Vimeo 播放器的 ID 選擇器進行最高優先級覆蓋 */
+/* 這個選擇器直接針對那個帶有內聯樣式的 div 元素。
+   [id^="player-"] 會選中所有 id 以 "player-" 開頭的元素。
+*/
+[id^="player-"] {
     width: 100% !important;
-    max-width: 100% !important; /* 覆蓋掉錯誤的 vh 單位 max-width */
-    height: auto !important;   /* 讓高度自動適應寬度 */
-    aspect-ratio: 16 / 9;      /* 強制保持 16:9 的寬高比，防止變形 */
+    height: auto !important;
+    max-width: 100% !important; /* 核心：覆蓋掉錯誤的 vh 單位 max-width */
+    aspect-ratio: 16 / 9;      /* 強制保持 16:9 的寬高比 */
+
+    /* 確保最小高度，防止在某些情況下塌陷 */
+    min-height: 300px; 
 }
