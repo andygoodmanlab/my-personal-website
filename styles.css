@@ -608,6 +608,8 @@ button {
   position: relative;
   overflow: hidden;
   height: 260px;
+  /* 确保视频容器不会超出边界 */
+  max-height: 260px;
 }
 
 /* 针对手机录屏视频的优化 */
@@ -617,6 +619,25 @@ button {
 }
 
 .project-video[data-orientation="landscape"] {
+  object-fit: cover;
+}
+
+/* Vimeo视频容器样式优化 */
+.project-video-container {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-video-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   object-fit: cover;
 }
 
