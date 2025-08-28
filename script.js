@@ -260,7 +260,7 @@ const projectData = {
     },
     effects: {
         title: 'Effect Path Optimization',
-        video: 'assets/projects/effect-optimization-demo.mp4',
+        vimeoId: '1113875050',
         tags: ['UX Optimization', 'Performance', 'User Engagement'],
         challenge: 'Slow effect loading speeds and poor trial experiences led to high user churn rates, affecting overall creative tool usage and user satisfaction.',
         role: 'Responsible for product design of effect path optimization, identifying key optimization points through data analysis and user research, and driving technical team implementation improvements.',
