@@ -243,7 +243,7 @@ const projectData = {
     },
     templates: {
         title: 'AI-Powered Templates',
-        video: 'assets/projects/ai-templates-demo.mp4',
+        vimeoId: '1113875113',
         tags: ['Machine Learning', 'Template System', 'Scalability'],
         challenge: 'Designer templates are limited in quantity and cannot meet the diverse needs of large numbers of users, while manual template creation is inefficient, limiting the diversity of content creation.',
         role: 'Led the product strategy for the AI template system, responsible for user needs analysis, technical solution evaluation, product design, and post-launch performance optimization.',
