@@ -226,7 +226,7 @@ function initializeProjectCards() {
 const projectData = {
     autocut: {
         title: 'AutoCut (0→1)',
-        vimeoId: '1113875050',
+        vimeoId: '1113875375',
         tags: ['AI/ML', 'Video Creation', 'Product Strategy'],
         challenge: 'Users need professional-grade video editing tools, but traditional tools have high learning costs and complex operations, limiting the creative ability of ordinary users.',
         role: 'As the lead product manager, I was responsible for product strategy formulation from 0 to 1, user research, feature design, and cross-team collaboration, ensuring the product was successfully launched and achieved growth targets.',
