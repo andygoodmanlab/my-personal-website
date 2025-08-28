@@ -827,8 +827,8 @@ button {
 
 .modal-hero {
   position: relative;
-  min-height: 400px;
-  max-height: 500px;
+  min-height: 500px;
+  max-height: 600px;
   background: var(--bg-primary);
   overflow: hidden;
 }
@@ -845,8 +845,8 @@ button {
 .modal-video-container {
   width: 100%;
   height: 100%;
-  min-height: 400px;
-  max-height: 500px;
+  min-height: 500px;
+  max-height: 600px;
   overflow: hidden;
   background: #000;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
